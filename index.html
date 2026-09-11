@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sem project 1</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.jgoogleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    
+  
+    
+    <section id="home" class="landingsec">
+      <div class="landingdiv">
+        <img
+          class="landingimg"
+          src="images/ChatGPT Image Sep 6, 2026, 12_44_51 PM.png"
+        />
+        <header class="glassheader">
+          <h1 class="logotext">SemProject</h1>
+          <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#categories">categories</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <button class="complaint">Login/Register</button>
+        </header>
+        <h1 class="shirpur">Shirpur's</h1>
+        <h1 class="reporter">Civic Issue Reporter</h1>
+        <span class="tagline">See a problem? Let's fix it.</span>
+        <button  class="filecomplaint" 
+                id="openComplaint"
+        >
+           
+          <img
+            width="24"
+            height="24"
+            src="https://img.icons8.com/material-sharp/24/add.png"
+            alt="add"
+          />
+          <span>File Complaint</span>
+        </button>
+      </div>
+    </section>
+
+
+
+    <div class="modal-overlay" id="complaintModal">
+
+        <div class="complaint-modal">
+
+           
+            <div class="modal-header">
+                <h2>Add Report</h2>
+
+                <button class="close-btn" id="closeComplaint">
+                    ×
+                </button>
+            </div>
+
+
+            <div class="modal-body">
+
+                <label class="photo-upload">
+
+                    <input type="file" id="photoInput" accept="image/*">
+
+                    <div class="upload-icon">▧</div>
+
+                    <span class="upload-title">
+                        Add Photo
+                    </span>
+
+                    <small>
+                        Click to upload an image
+                    </small>
+
+                </label>
+
+                <p class="photo-info">
+                </p>
+
+
+                <div class="input-box">
+
+                    <span class="input-icon">↗</span>
+
+                    <input
+                        type="text"
+                        id="issueTitle"
+                        placeholder="Title"
+                    >
+
+                </div>
+
+
+                <div class="input-box select-box">
+
+                    <span class="input-icon">▦</span>
+
+                    <select id="category">
+
+                        <option value="">Category</option>
+                        <option value="Roads">Roads</option>
+                        <option value="Lighting">Lighting</option>
+                        <option value="Water">Water</option>
+                        <option value="Garbage">Garbage</option>
+                        <option value="Drainage">Drainage</option>
+                        <option value="Traffic">Traffic</option>
+                        <option value="Other">Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-box textarea-box">
+
+                    <span class="input-icon">☰</span>
+
+                    <textarea
+                        id="description"
+                        placeholder="Briefly describe the issue..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="input-box select-box">
+
+                    <span class="input-icon">⌖</span>
+
+                    <select id="location">
+
+                        <option value="">Location</option>
+                        <option value="Shirpur Main Road">
+                            Shirpur Main Road
+                        </option>
+
+                        <option value="Shirpur Bus Stand">
+                            Shirpur Bus Stand
+                        </option>
+
+                        <option value="R C Patel Area">
+                            R C Patel Area
+                        </option>
+
+                        <option value="Railway Station Road">
+                            Railway Station Road
+                        </option>
+
+                        <option value="Other">
+                            Other Location
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button class="submit-btn" id="submitComplaint">
+                    Submit
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="success-message" id="successMessage">
+        <span>✓</span>
+        Complaint submitted successfully!
+    </div>
+
+
+
+
+
+
+    <section id="categories" class="categories">
+      <img class="roadpng" src="images/roadpng2.png">
+      <div class="categoriesdiv">
+        <h1 class="complaintheading">COMPLAINT CATEGORIES</h1>
+
+        <div class="box1">
+          <span class="names">Potholes</span>
+        </div>
+        <div class="box2">
+           <span class="names">Broken Streetlights</span>
+
+        </div>
+        <div class="box3">
+         <span class="names">Open Garbage Dumping</span>
+
+        </div>
+        <div class="box4">
+                    <span class="names">Open Drainage Line </span>
+
+        </div>
+        <div class="box5">
+                    <span class="names">Blocked Manholes</span>
+
+        </div>
+        <div class="box6">
+                    <span class="names">Open Electric DP </span>
+
+        </div>
+      </div>
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <div class="contactdiv">
+              <h1 class="contactheading">CONTACT</h1>
+              <div class="map">
+                <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3715.962619954981!2d74.87943527934569!3d21.351969600000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdf2d5e0650eb57%3A0x6c662c8d7b946584!2sShirpur%20Municipal%20Council%20Office!5e0!3m2!1sen!2sin!4v1788887911240!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              
+              
+          </div>
+
+<h1 class="connectshirpur">
+  Connect with Shirpur Municipal Council
+</h1>
+<p class="contactpara">
+  Shirpur Municipal Council plays an important role in maintaining and improving essential civic services across the city. Through Civic Issue Reporter, citizens can easily report problems such as potholes, damaged roads, streetlight issues, garbage, drainage problems, and other public concerns, helping authorities identify and address issues more efficiently.
+</p>
+<img class="call"  src="https://img.icons8.com/ios-filled/50/phone-disconnected.png" alt="phone-disconnected"/>
+<span class="number">02563 255042</span>
+      </div>
+    </section>
+
+<section id="about" class="aboutus">
+  <div class="aboutdiv">
+<h1 class="aboutheading">
+  ABOUT US
+</h1>
+<p class="aboutpara">
+  We are a team of passionate Computer Science Engineering students who came from R C Patel Institue Of Technology to develop Civic Issue Reporter as a practical solution for the people of Shirpur. With our interest in technology and problem-solving, we designed this platform to make reporting civic issues easier, faster, and more accessible. This project represents our teamwork, creativity, and effort to use technology for creating a positive impact in our community.
+</p>
+<h1 class="feedback">
+  FEEDBACK 
+</h1>
+<div class="feedbackform">
+  <h1 class="Messageus">Message Us</h1>
+  <input type="text" class="nameinput" placeholder="Full Name">
+    <input type="email" class="emailinput" placeholder="Email">
+    <textarea id="message" class="messageinput" placeholder="Message" required></textarea>
+
+</div>
+
+  </div>
+</section>
+
+
+
+
+<script src="script.js"></script>
+  </body>
+</html>

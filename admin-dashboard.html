@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Admin Dashboard - Civic Issue Reporter</title>
+
+    <link rel="stylesheet" href="admin-dashboard.css" />
+  </head>
+
+  <body>
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-icon">C</div>
+
+        <div>
+          <h2>Civic</h2>
+          <span>Issue Reporter</span>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#" class="nav-link active">
+          <span>▦</span>
+          Dashboard
+        </a>
+
+        <a href="#" class="nav-link">
+          <span>⚠</span>
+          All Issues
+        </a>
+
+        <a href="#" class="nav-link">
+          <span>👥</span>
+          Users
+        </a>
+
+        <a href="#" class="nav-link">
+          <span>⌖</span>
+          Issue Map
+        </a>
+
+        <a href="#" class="nav-link">
+          <span>▤</span>
+          Reports
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <a href="#" class="nav-link">
+          <span>⚙</span>
+          Settings
+        </a>
+
+        <a href="#" class="nav-link logout">
+          <span>↪</span>
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+      <!-- TOP BAR -->
+
+      <header class="topbar">
+        <div>
+          <h1>Admin Dashboard</h1>
+
+          <p>Manage and monitor civic issues reported in Shirpur.</p>
+        </div>
+
+        <div class="admin-profile">
+          <div class="admin-avatar">A</div>
+
+          <div>
+            <strong>Admin</strong>
+            <small>Administrator</small>
+          </div>
+        </div>
+      </header>
+
+      <!-- ================= STATISTICS ================= -->
+
+      <section class="stats">
+        <div class="stat-card">
+          <div class="stat-icon total">▦</div>
+
+          <div>
+            <span>Total Issues</span>
+            <h2>128</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon pending">!</div>
+
+          <div>
+            <span>Pending</span>
+            <h2>42</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon progress">↻</div>
+
+          <div>
+            <span>In Progress</span>
+            <h2>31</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon resolved">✓</div>
+
+          <div>
+            <span>Resolved</span>
+            <h2>55</h2>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CONTENT GRID ================= -->
+
+      <section class="content-grid">
+        <!-- RECENT ISSUES -->
+
+        <div class="issues-card">
+          <div class="section-header">
+            <div>
+              <h2>Recent Issues</h2>
+
+              <p>Latest complaints submitted by users</p>
+            </div>
+
+            <button class="view-btn">View All</button>
+          </div>
+
+          <!-- SEARCH -->
+
+          <div class="filters">
+            <input type="text" placeholder="Search complaint..." />
+
+            <select>
+              <option>All Categories</option>
+              <option>Roads</option>
+              <option>Lighting</option>
+              <option>Garbage</option>
+              <option>Drainage</option>
+              <option>Water</option>
+            </select>
+
+            <select>
+              <option>All Status</option>
+              <option>Pending</option>
+              <option>In Progress</option>
+              <option>Resolved</option>
+            </select>
+          </div>
+
+          <!-- TABLE -->
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Complaint ID</th>
+                  <th>Issue</th>
+                  <th>Category</th>
+                  <th>Location</th>
+                  <th>User</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>CIV-2026-0001</strong>
+                  </td>
+
+                  <td>Broken Street Light</td>
+
+                  <td>Lighting</td>
+
+                  <td>Shirpur Main Road</td>
+
+                  <td>Rahul Patil</td>
+
+                  <td>
+                    <span class="status pending-status"> Pending </span>
+                  </td>
+
+                  <td>11 Sep 2026</td>
+
+                  <td>
+                    <button class="action-btn">View</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <strong>CIV-2026-0002</strong>
+                  </td>
+
+                  <td>Large Road Pothole</td>
+
+                  <td>Roads</td>
+
+                  <td>Station Road</td>
+
+                  <td>Amit Sharma</td>
+
+                  <td>
+                    <span class="status progress-status"> In Progress </span>
+                  </td>
+
+                  <td>10 Sep 2026</td>
+
+                  <td>
+                    <button class="action-btn">View</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <strong>CIV-2026-0003</strong>
+                  </td>
+
+                  <td>Garbage Overflow</td>
+
+                  <td>Garbage</td>
+
+                  <td>Market Area</td>
+
+                  <td>Sneha Joshi</td>
+
+                  <td>
+                    <span class="status resolved-status"> Resolved </span>
+                  </td>
+
+                  <td>09 Sep 2026</td>
+
+                  <td>
+                    <button class="action-btn">View</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <strong>CIV-2026-0004</strong>
+                  </td>
+
+                  <td>Drainage Problem</td>
+
+                  <td>Drainage</td>
+
+                  <td>College Road</td>
+
+                  <td>Rohan More</td>
+
+                  <td>
+                    <span class="status pending-status"> Pending </span>
+                  </td>
+
+                  <td>08 Sep 2026</td>
+
+                  <td>
+                    <button class="action-btn">View</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ================= RIGHT SIDE ================= -->
+
+        <div class="right-column">
+          <!-- MAP -->
+
+          <div class="map-card">
+            <div class="section-header">
+              <div>
+                <h2>Issue Map</h2>
+
+                <p>Reported issue locations</p>
+              </div>
+            </div>
+
+            <div class="fake-map">
+              <div class="map-grid"></div>
+
+              <div class="map-road road-one"></div>
+
+              <div class="map-road road-two"></div>
+
+              <div class="map-marker marker-one">!</div>
+
+              <div class="map-marker marker-two">!</div>
+
+              <div class="map-marker marker-three">!</div>
+
+              <div class="map-marker marker-four">!</div>
+
+              <div class="map-label">Shirpur</div>
+            </div>
+          </div>
+
+          <!-- ISSUE CATEGORIES -->
+
+          <div class="category-card">
+            <div class="section-header">
+              <div>
+                <h2>Issue Categories</h2>
+
+                <p>Current complaints</p>
+              </div>
+            </div>
+
+            <div class="category-row">
+              <span>Roads</span>
+
+              <strong>38</strong>
+            </div>
+
+            <div class="category-row">
+              <span>Lighting</span>
+
+              <strong>27</strong>
+            </div>
+
+            <div class="category-row">
+              <span>Garbage</span>
+
+              <strong>24</strong>
+            </div>
+
+            <div class="category-row">
+              <span>Drainage</span>
+
+              <strong>19</strong>
+            </div>
+
+            <div class="category-row">
+              <span>Water</span>
+
+              <strong>20</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= USER ACTIVITY ================= -->
+
+      <section class="bottom-section">
+        <div class="users-card">
+          <div class="section-header">
+            <div>
+              <h2>Recent Users</h2>
+
+              <p>Users who recently reported issues</p>
+            </div>
+
+            <button class="view-btn">View Users</button>
+          </div>
+
+          <div class="user-list">
+            <div class="user-row">
+              <div class="user-avatar">RP</div>
+
+              <div class="user-info">
+                <strong>Rahul Patil</strong>
+
+                <span> rahul@example.com </span>
+              </div>
+
+              <div class="user-issue">4 Issues</div>
+            </div>
+
+            <div class="user-row">
+              <div class="user-avatar">AS</div>
+
+              <div class="user-info">
+                <strong>Amit Sharma</strong>
+
+                <span> amit@example.com </span>
+              </div>
+
+              <div class="user-issue">3 Issues</div>
+            </div>
+
+            <div class="user-row">
+              <div class="user-avatar">SJ</div>
+
+              <div class="user-info">
+                <strong>Sneha Joshi</strong>
+
+                <span> sneha@example.com </span>
+              </div>
+
+              <div class="user-issue">2 Issues</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADMIN NOTE -->
+
+        <div class="admin-note">
+          <div class="section-header">
+            <div>
+              <h2>Admin Quick Note</h2>
+
+              <p>Keep track of important actions</p>
+            </div>
+          </div>
+
+          <textarea placeholder="Write an admin note..."></textarea>
+
+          <button class="save-note">Save Note</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
