@@ -6,12 +6,10 @@
 
     <title>Admin Dashboard - Civic Issue Reporter</title>
 
-    <link rel="stylesheet" href="admin-dashboard.css" />
+    <link rel="stylesheet" href="admin.css" />
   </head>
 
   <body>
-    <!-- ================= SIDEBAR ================= -->
-
     <aside class="sidebar">
       <div class="logo">
         <div class="logo-icon">C</div>
@@ -24,37 +22,27 @@
 
       <nav>
         <a href="#" class="nav-link active">
-          <span>▦</span>
+          <span>➔</span>
           Dashboard
         </a>
 
         <a href="#" class="nav-link">
-          <span>⚠</span>
+          <span>➔</span>
           All Issues
         </a>
 
         <a href="#" class="nav-link">
-          <span>👥</span>
+          <span>➔</span>
           Users
         </a>
 
         <a href="#" class="nav-link">
-          <span>⌖</span>
-          Issue Map
-        </a>
-
-        <a href="#" class="nav-link">
-          <span>▤</span>
+          <span>➔</span>
           Reports
         </a>
       </nav>
 
       <div class="sidebar-bottom">
-        <a href="#" class="nav-link">
-          <span>⚙</span>
-          Settings
-        </a>
-
         <a href="#" class="nav-link logout">
           <span>↪</span>
           Logout
@@ -62,11 +50,7 @@
       </div>
     </aside>
 
-    <!-- ================= MAIN ================= -->
-
     <main class="main">
-      <!-- TOP BAR -->
-
       <header class="topbar">
         <div>
           <h1>Admin Dashboard</h1>
@@ -84,15 +68,13 @@
         </div>
       </header>
 
-      <!-- ================= STATISTICS ================= -->
-
       <section class="stats">
         <div class="stat-card">
           <div class="stat-icon total">▦</div>
 
           <div>
             <span>Total Issues</span>
-            <h2>128</h2>
+            <h2>-</h2>
           </div>
         </div>
 
@@ -101,7 +83,7 @@
 
           <div>
             <span>Pending</span>
-            <h2>42</h2>
+            <h2>-</h2>
           </div>
         </div>
 
@@ -110,7 +92,7 @@
 
           <div>
             <span>In Progress</span>
-            <h2>31</h2>
+            <h2>-</h2>
           </div>
         </div>
 
@@ -119,16 +101,12 @@
 
           <div>
             <span>Resolved</span>
-            <h2>55</h2>
+            <h2>-</h2>
           </div>
         </div>
       </section>
 
-      <!-- ================= CONTENT GRID ================= -->
-
       <section class="content-grid">
-        <!-- RECENT ISSUES -->
-
         <div class="issues-card">
           <div class="section-header">
             <div>
@@ -139,8 +117,6 @@
 
             <button class="view-btn">View All</button>
           </div>
-
-          <!-- SEARCH -->
 
           <div class="filters">
             <input type="text" placeholder="Search complaint..." />
@@ -161,8 +137,6 @@
               <option>Resolved</option>
             </select>
           </div>
-
-          <!-- TABLE -->
 
           <div class="table-container">
             <table>
@@ -189,9 +163,9 @@
 
                   <td>Lighting</td>
 
-                  <td>Shirpur Main Road</td>
+                  <td>Shirpur Bus stand</td>
 
-                  <td>Rahul Patil</td>
+                  <td>Piyush JAdhav</td>
 
                   <td>
                     <span class="status pending-status"> Pending </span>
@@ -213,9 +187,9 @@
 
                   <td>Roads</td>
 
-                  <td>Station Road</td>
+                  <td>5 kandil</td>
 
-                  <td>Amit Sharma</td>
+                  <td>Harshal Patil</td>
 
                   <td>
                     <span class="status progress-status"> In Progress </span>
@@ -237,9 +211,9 @@
 
                   <td>Garbage</td>
 
-                  <td>Market Area</td>
+                  <td>karwand naka</td>
 
-                  <td>Sneha Joshi</td>
+                  <td>Anup chaudhari</td>
 
                   <td>
                     <span class="status resolved-status"> Resolved </span>
@@ -261,9 +235,9 @@
 
                   <td>Drainage</td>
 
-                  <td>College Road</td>
+                  <td>nimzari naka</td>
 
-                  <td>Rohan More</td>
+                  <td>Lucky Bhamre</td>
 
                   <td>
                     <span class="status pending-status"> Pending </span>
@@ -280,41 +254,7 @@
           </div>
         </div>
 
-        <!-- ================= RIGHT SIDE ================= -->
-
         <div class="right-column">
-          <!-- MAP -->
-
-          <div class="map-card">
-            <div class="section-header">
-              <div>
-                <h2>Issue Map</h2>
-
-                <p>Reported issue locations</p>
-              </div>
-            </div>
-
-            <div class="fake-map">
-              <div class="map-grid"></div>
-
-              <div class="map-road road-one"></div>
-
-              <div class="map-road road-two"></div>
-
-              <div class="map-marker marker-one">!</div>
-
-              <div class="map-marker marker-two">!</div>
-
-              <div class="map-marker marker-three">!</div>
-
-              <div class="map-marker marker-four">!</div>
-
-              <div class="map-label">Shirpur</div>
-            </div>
-          </div>
-
-          <!-- ISSUE CATEGORIES -->
-
           <div class="category-card">
             <div class="section-header">
               <div>
@@ -357,15 +297,13 @@
         </div>
       </section>
 
-      <!-- ================= USER ACTIVITY ================= -->
-
       <section class="bottom-section">
         <div class="users-card">
           <div class="section-header">
             <div>
               <h2>Recent Users</h2>
 
-              <p>Users who recently reported issues</p>
+              <p>recently reported issues</p>
             </div>
 
             <button class="view-btn">View Users</button>
@@ -373,59 +311,45 @@
 
           <div class="user-list">
             <div class="user-row">
-              <div class="user-avatar">RP</div>
+              <div class="user-avatar">HP</div>
 
               <div class="user-info">
-                <strong>Rahul Patil</strong>
+                <strong>Harshal Patil</strong>
 
-                <span> rahul@example.com </span>
+                <span> harshalpatil@gmail.com </span>
               </div>
 
               <div class="user-issue">4 Issues</div>
             </div>
 
             <div class="user-row">
-              <div class="user-avatar">AS</div>
+              <div class="user-avatar">LB</div>
 
               <div class="user-info">
-                <strong>Amit Sharma</strong>
+                <strong>lucky Bhamre</strong>
 
-                <span> amit@example.com </span>
+                <span>luckybhamre@gmail.com</span>
               </div>
 
               <div class="user-issue">3 Issues</div>
             </div>
 
             <div class="user-row">
-              <div class="user-avatar">SJ</div>
+              <div class="user-avatar">AC</div>
 
               <div class="user-info">
-                <strong>Sneha Joshi</strong>
+                <strong>Anup chaudhari</strong>
 
-                <span> sneha@example.com </span>
+                <span>anupchaudhari@gmail.com </span>
               </div>
 
               <div class="user-issue">2 Issues</div>
             </div>
           </div>
         </div>
-
-        <!-- ADMIN NOTE -->
-
-        <div class="admin-note">
-          <div class="section-header">
-            <div>
-              <h2>Admin Quick Note</h2>
-
-              <p>Keep track of important actions</p>
-            </div>
-          </div>
-
-          <textarea placeholder="Write an admin note..."></textarea>
-
-          <button class="save-note">Save Note</button>
-        </div>
       </section>
     </main>
+
+    <script src="admin.js"></script>
   </body>
 </html>

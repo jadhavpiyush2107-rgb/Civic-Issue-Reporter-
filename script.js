@@ -1,118 +1,197 @@
-const openComplaint = document.getElementById("openComplaint");
-const closeComplaint = document.getElementById("closeComplaint");
+const openComplaintBtn = document.getElementById((id = "openComplaint"));
 
-const complaintModal = document.getElementById("complaintModal");
+const closeComplaintBtn = document.getElementById("closeComplaintBtn");
 
-const submitComplaint = document.getElementById("submitComplaint");
+const complaintOverlay = document.getElementById("complaintOverlay");
 
-const successMessage = document.getElementById("successMessage");
+const complaintForm = document.getElementById("complaintForm");
 
-const photoInput = document.getElementById("photoInput");
+const potholes = document.getElementById((id = "potholes"));
 
-// OPEN COMPLAINT FORM
+const brokenlights = document.getElementById((id = "brokenlights"));
 
-openComplaint.addEventListener("click", function () {
-  complaintModal.classList.add("active");
+const garbage = document.getElementById((id = "garbage"));
 
-  // Prevent background scrolling
+potholes.addEventListener("click", function () {
+  complaintOverlay.style.display = "flex";
+
   document.body.style.overflow = "hidden";
 });
 
-// CLOSE COMPLAINT FORM
+openComplaintBtn.addEventListener("click", function () {
+  complaintOverlay.style.display = "flex";
 
-closeComplaint.addEventListener("click", function () {
-  closeModal();
+  document.body.style.overflow = "hidden";
 });
 
-// CLOSE FUNCTION
-
-function closeModal() {
-  complaintModal.classList.remove("active");
+function closeComplaintForm() {
+  complaintOverlay.style.display = "none";
 
   document.body.style.overflow = "auto";
 }
 
-// CLICK OUTSIDE MODAL TO CLOSE
+closeComplaintBtn.addEventListener("click", closeComplaintForm);
 
-complaintModal.addEventListener("click", function (event) {
-  if (event.target === complaintModal) {
-    closeModal();
+complaintOverlay.addEventListener("click", function (event) {
+  if (event.target === complaintOverlay) {
+    closeComplaintForm();
   }
 });
 
-// ESC KEY TO CLOSE
+const complaintImage = document.getElementById("complaintImage");
 
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    closeModal();
-  }
-});
+const imagePreview = document.getElementById("imagePreview");
 
-// PHOTO UPLOAD
+const photoText = document.getElementById("photoText");
 
-photoInput.addEventListener("change", function () {
-  if (this.files && this.files[0]) {
-    const fileName = this.files[0].name;
+complaintImage.addEventListener("change", function () {
+  const file = this.files[0];
 
-    document.querySelector(".upload-title").textContent = fileName;
+  if (!file) {
+    imagePreview.style.display = "none";
 
-    document.querySelector(".photo-upload small").textContent =
-      "Photo selected successfully";
-  }
-});
-
-// SUBMIT COMPLAINT
-
-submitComplaint.addEventListener("click", function () {
-  const title = document.getElementById("issueTitle").value.trim();
-
-  const category = document.getElementById("category").value;
-
-  const description = document.getElementById("description").value.trim();
-
-  const location = document.getElementById("location").value;
-
-  // CHECK REQUIRED FIELDS
-
-  if (
-    title === "" ||
-    category === "" ||
-    description === "" ||
-    location === ""
-  ) {
-    alert("Please fill all the required fields.");
+    photoText.style.display = "flex";
 
     return;
   }
 
-  // CLOSE MODAL
+  const imageURL = URL.createObjectURL(file);
 
-  closeModal();
+  imagePreview.src = imageURL;
 
-  // SHOW SUCCESS MESSAGE
+  imagePreview.style.display = "block";
 
-  successMessage.classList.add("show");
+  photoText.style.display = "none";
+});
 
-  // RESET FORM
+const getLocationBtn = document.getElementById("getLocationBtn");
 
-  document.getElementById("issueTitle").value = "";
+const locationText = document.getElementById("locationText");
 
-  document.getElementById("category").value = "";
+const locationStatus = document.getElementById("locationStatus");
 
-  document.getElementById("description").value = "";
+const latitudeInput = document.getElementById("latitude");
 
-  document.getElementById("location").value = "";
+const longitudeInput = document.getElementById("longitude");
 
-  photoInput.value = "";
+getLocationBtn.addEventListener("click", function () {
+  if (!navigator.geolocation) {
+    locationStatus.textContent = "Your browser does not support GPS location.";
 
-  document.querySelector(".upload-title").textContent = "Add Photo";
+    return;
+  }
 
-  document.querySelector(".photo-upload small").textContent =
-    "Click to upload an image";
+  locationStatus.textContent = "Getting your current location...";
 
-  // HIDE SUCCESS MESSAGE
+  getLocationBtn.disabled = true;
 
-  setTimeout(function () {
-    successMessage.classList.remove("show");
-  }, 300);
+  getLocationBtn.textContent = "Getting Location...";
+
+  navigator.geolocation.getCurrentPosition(
+    function (position) {
+      const latitude = position.coords.latitude;
+
+      const longitude = position.coords.longitude;
+
+      /* Save coordinates */
+
+      latitudeInput.value = latitude;
+
+      longitudeInput.value = longitude;
+
+      /* Show location */
+
+      locationText.textContent = `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`;
+
+      locationStatus.textContent = "✓ Your current location has been captured.";
+
+      getLocationBtn.disabled = false;
+
+      getLocationBtn.textContent = " Location Captured";
+    },
+
+    function (error) {
+      getLocationBtn.disabled = false;
+
+      getLocationBtn.textContent = "📍 Use Current Location";
+
+      if (error.code === 1) {
+        locationStatus.textContent =
+          "Location permission was denied. Please allow location access.";
+      } else if (error.code === 2) {
+        locationStatus.textContent =
+          "Your current location could not be found.";
+      } else if (error.code === 3) {
+        locationStatus.textContent = "Location request timed out. Try again.";
+      } else {
+        locationStatus.textContent = "Unable to get your location.";
+      }
+    },
+
+    {
+      enableHighAccuracy: true,
+
+      timeout: 15000,
+
+      maximumAge: 0,
+    },
+  );
+});
+
+const phoneNumber = document.getElementById("phoneNumber");
+
+phoneNumber.addEventListener("input", function () {
+  this.value = this.value.replace(/\D/g, "");
+});
+
+complaintForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  /* Check location */
+
+  if (latitudeInput.value === "" || longitudeInput.value === "") {
+    alert(
+      "Please select your current location before submitting the complaint.",
+    );
+
+    return;
+  }
+
+  const name = document.getElementById("userName").value;
+
+  const title = document.getElementById("complaintTitle").value;
+
+  alert("Complaint submitted successfully!\n\n" + "Thank you, " + name + "!");
+
+  console.log({
+    userName: document.getElementById("userName").value,
+
+    phone: document.getElementById("phoneNumber").value,
+
+    address: document.getElementById("userAddress").value,
+
+    title: document.getElementById("complaintTitle").value,
+
+    category: document.getElementById("complaintCategory").value,
+
+    description: document.getElementById("complaintDescription").value,
+
+    latitude: latitudeInput.value,
+
+    longitude: longitudeInput.value,
+
+    image: complaintImage.files[0],
+  });
+
+  complaintForm.reset();
+
+  imagePreview.style.display = "none";
+
+  photoText.style.display = "flex";
+
+  locationText.textContent = "Location not selected";
+
+  locationStatus.textContent = "";
+
+  closeComplaintForm();
 });

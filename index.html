@@ -38,13 +38,13 @@
             <a href="#categories">categories</a>
             <a href="#contact">Contact</a>
           </nav>
-          <button class="complaint">Login/Register</button>
+          <button class="complaint"> <a href="login.html" >Login/Register</a></button>
         </header>
         <h1 class="shirpur">Shirpur's</h1>
         <h1 class="reporter">Civic Issue Reporter</h1>
         <span class="tagline">See a problem? Let's fix it.</span>
         <button  class="filecomplaint" 
-                id="openComplaint"
+                id="openComplaint" 
         >
            
           <img
@@ -60,41 +60,121 @@
 
 
 
-    <div class="modal-overlay" id="complaintModal">
-
-        <div class="complaint-modal">
-
-           
-            <div class="modal-header">
-                <h2>Add Report</h2>
-
-                <button class="close-btn" id="closeComplaint">
-                    ×
-                </button>
-            </div>
+   
 
 
-            <div class="modal-body">
 
-                <label class="photo-upload">
 
-                    <input type="file" id="photoInput" accept="image/*">
+<div class="complaint-overlay" id="complaintOverlay">
 
-                    <div class="upload-icon">▧</div>
+    <div class="complaint-modal">
 
-                    <span class="upload-title">
-                        Add Photo
-                    </span>
+      
+        <div class="complaint-header">
 
-                    <small>
-                        Click to upload an image
-                    </small>
+            <h2>Add Report</h2>
+
+            <button class="close-btn" id="closeComplaintBtn">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="complaintForm">
+
+            <div class="form-content">
+
+
+               
+
+                <div class="section-label">
+                    User Information
+                </div>
+
+
+
+                <div class="input-box">
+
+                    <span class="input-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M200-246q54-53 125.5-83.5T480-360q83 0 154.5 30.5T760-246v-514H200v514Zm379-235q41-41 41-99t-41-99q-41-41-99-41t-99 41q-41 41-41 99t41 99q41 41 99 41t99-41ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm69-80h422q-44-39-99.5-59.5T480-280q-56 0-112.5 20.5T269-200Zm168.5-337.5Q420-555 420-580t17.5-42.5Q455-640 480-640t42.5 17.5Q540-605 540-580t-17.5 42.5Q505-520 480-520t-42.5-17.5ZM480-503Z"/></svg></span>
+
+                    <input
+                        type="text"
+                        id="userName"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                </div>
+
+
+          
+
+                <div class="input-box">
+
+                    <span class="input-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v124q18 7 29 22t11 34v80q0 19-11 34t-29 22v404q0 33-23.5 56.5T680-40H280Zm0-80h400v-720H280v720Zm0 0v-720 720Zm228.5-611.5Q520-743 520-760t-11.5-28.5Q497-800 480-800t-28.5 11.5Q440-777 440-760t11.5 28.5Q463-720 480-720t28.5-11.5Z"/></svg></span>
+
+                    <input
+                        type="tel"
+                        id="phoneNumber"
+                        placeholder="Phone Number"
+                        maxlength="10"
+                        required
+                    >
+
+                </div>
+
+
+              
+
+                <div class="input-box textarea-box">
+
+                    <span class="input-icon">⌂</span>
+
+                    <textarea
+                        id="userAddress"
+                        placeholder="Your Address"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+      
+                <div class="section-label">
+                    Complaint Information
+                </div>
+
+
+                <label class="photo-upload" for="complaintImage">
+
+                    <div class="photo-icon">
+                        ▧
+                    </div>
+
+                    <div id="photoText">
+                        <strong>Add Photo</strong>
+                        <span>Click to upload an image</span>
+                    </div>
+
+                    <img
+                        id="imagePreview"
+                        class="image-preview"
+                        alt="Complaint preview"
+                    >
 
                 </label>
 
-                <p class="photo-info">
-                </p>
+                <input
+                    type="file"
+                    id="complaintImage"
+                    accept="image/*"
+                    hidden
+                    required
+                >
 
+
+                
 
                 <div class="input-box">
 
@@ -102,31 +182,60 @@
 
                     <input
                         type="text"
-                        id="issueTitle"
-                        placeholder="Title"
+                        id="complaintTitle"
+                        placeholder="Complaint Title"
+                        required
                     >
 
                 </div>
 
 
-                <div class="input-box select-box">
+          
+
+                <div class="input-box">
 
                     <span class="input-icon">▦</span>
 
-                    <select id="category">
+                    <select id="complaintCategory" required>
 
-                        <option value="">Category</option>
-                        <option value="Roads">Roads</option>
-                        <option value="Lighting">Lighting</option>
-                        <option value="Water">Water</option>
-                        <option value="Garbage">Garbage</option>
-                        <option value="Drainage">Drainage</option>
-                        <option value="Traffic">Traffic</option>
-                        <option value="Other">Other</option>
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="Pothole / Damaged Road">
+                            Pothole / Damaged Road
+                        </option>
+
+                        <option value="Broken Streetlight">
+                            Broken Streetlight
+                        </option>
+
+                        <option value="Garbage / Waste">
+                            Garbage / Waste
+                        </option>
+
+                        <option value="Open Drainage">
+                            Open Drainage
+                        </option>
+
+                        <option value="Water Supply">
+                            Water Supply
+                        </option>
+
+                        <option value="Traffic Issue">
+                            Traffic Issue
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
 
                     </select>
 
+                    <span class="select-arrow">⌄</span>
+
                 </div>
+
 
 
                 <div class="input-box textarea-box">
@@ -134,54 +243,82 @@
                     <span class="input-icon">☰</span>
 
                     <textarea
-                        id="description"
+                        id="complaintDescription"
                         placeholder="Briefly describe the issue..."
+                        required
                     ></textarea>
 
                 </div>
 
 
-                <div class="input-box select-box">
+               
 
-                    <span class="input-icon">⌖</span>
+                <div class="section-label">
+                    Complaint Location
+                </div>
 
-                    <select id="location">
 
-                        <option value="">Location</option>
-                        <option value="Shirpur Main Road">
-                            Shirpur Main Road
-                        </option>
+                <div class="location-box">
 
-                        <option value="Shirpur Bus Stand">
-                            Shirpur Bus Stand
-                        </option>
+                    <div class="location-top">
 
-                        <option value="R C Patel Area">
-                            R C Patel Area
-                        </option>
+                        <span class="input-icon">⌖</span>
 
-                        <option value="Railway Station Road">
-                            Railway Station Road
-                        </option>
+                        <span id="locationText">
+                            Location not selected
+                        </span>
 
-                        <option value="Other">
-                            Other Location
-                        </option>
+                    </div>
 
-                    </select>
+
+                    <button
+                        type="button"
+                        class="location-btn"
+                        id="getLocationBtn"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></svg> Use Current Location
+                    </button>
 
                 </div>
 
 
-                <button class="submit-btn" id="submitComplaint">
-                    Submit
+             
+
+                <p
+                    class="location-status"
+                    id="locationStatus"
+                ></p>
+
+
+
+                <input
+                    type="hidden"
+                    id="latitude"
+                >
+
+                <input
+                    type="hidden"
+                    id="longitude"
+                >
+
+
+                
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    Submit Complaint
                 </button>
+
 
             </div>
 
-        </div>
+        </form>
 
     </div>
+
+</div>
 
 
     <div class="success-message" id="successMessage">
@@ -200,26 +337,26 @@
         <h1 class="complaintheading">COMPLAINT CATEGORIES</h1>
 
         <div class="box1">
-          <span class="names">Potholes</span>
+          <span class="names"  id="potholes">potholes</span>
         </div>
         <div class="box2">
-           <span class="names">Broken Streetlights</span>
+           <span class="names" id="brokenlights">Broken Streetlights</span>
 
         </div>
         <div class="box3">
-         <span class="names">Open Garbage Dumping</span>
+         <span class="names" id="garbage">Open Garbage Dumping</span>
 
         </div>
         <div class="box4">
-                    <span class="names">Open Drainage Line </span>
+                    <span class="names" id="drainage">Open Drainage Line </span>
 
         </div>
         <div class="box5">
-                    <span class="names">Blocked Manholes</span>
+                    <span class="names" id="blockedmanholes">Blocked Manholes</span>
 
         </div>
         <div class="box6">
-                    <span class="names">Open Electric DP </span>
+                    <span class="names" id="electric">Open Electric DP </span>
 
         </div>
       </div>
@@ -253,14 +390,6 @@
 <p class="aboutpara">
   We are a team of passionate Computer Science Engineering students who came from R C Patel Institue Of Technology to develop Civic Issue Reporter as a practical solution for the people of Shirpur. With our interest in technology and problem-solving, we designed this platform to make reporting civic issues easier, faster, and more accessible. This project represents our teamwork, creativity, and effort to use technology for creating a positive impact in our community.
 </p>
-<h1 class="feedback">
-  FEEDBACK 
-</h1>
-<div class="feedbackform">
-  <h1 class="Messageus">Message Us</h1>
-  <input type="text" class="nameinput" placeholder="Full Name">
-    <input type="email" class="emailinput" placeholder="Email">
-    <textarea id="message" class="messageinput" placeholder="Message" required></textarea>
 
 </div>
 

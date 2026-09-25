@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Sora:wght@100..800&display=swap");
+
+* {
+  font-family: sora, sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.2s linear;
+}
+
+body {
+  padding-top: 75px;
+  overflow: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgb(105, 244, 35);
+  padding: 20px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.15);
+}
+
+header .navbar a {
+  color: grey;
+  border-radius: 5px;
+  padding: 3px 15px;
+}
+
+.paralogin {
+  font-size: 25px;
+}
+
+header .navbar a:hover {
+  color: black;
+  transform: translatey(-3px);
+}
+
+.login-container {
+  width: 1500px;
+  height: 600px;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.loginbox {
+  width: 700px;
+  height: 550px;
+  margin-top: 40px;
+  background-color: #dcffc4;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 1px solid rgb(214, 212, 212);
+  border-radius: 10px;
+  position: relative;
+
+  overflow: hidden;
+}
+
+.orangesticker {
+  width: 300px;
+  height: 300px;
+}
+
+.orangeimg {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  margin-top: -60px;
+  margin-left: 600px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+    transform: translatex(-10px); /* Adjust height of the float here */
+  }
+  100% {
+    transform: translateY(0px);
+    transform: translatex(0px);
+  }
+}
+
+.loginbox .span1 {
+  position: absolute;
+  margin-top: -260px;
+  font-size: 17px;
+  margin-left: 40px;
+}
+
+.loginbox .heading {
+  font-family: sora;
+  font-weight: 700;
+  font-size: 44px;
+  margin-top: -240px;
+  margin-left: 40px;
+}
+
+.pleaselogin {
+  position: absolute;
+  margin-top: 120px;
+  margin-left: 40px;
+}
+
+.input1 {
+  position: absolute;
+  height: 50px;
+  width: 550px;
+  margin-left: 40px;
+  margin-top: 85px;
+  border-radius: 7px;
+  background-color: #f0efef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid rgb(206, 204, 204);
+  padding-left: 30px;
+}
+
+.input1::placeholder {
+  font-size: 15px;
+  padding-left: -15px;
+  color: #94a3b8;
+}
+
+.input1:hover {
+  background-color: #9bf87e;
+  border-color: #cbd5e1;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.input2 {
+  position: absolute;
+  height: 50px;
+  width: 550px;
+  margin-left: 40px;
+  margin-top: 160px;
+  border-radius: 7px;
+  background-color: #f0efef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid rgb(206, 204, 204);
+  padding-left: 30px;
+}
+
+.input2::placeholder {
+  font-size: 15px;
+  padding-left: -15px;
+  color: #94a3b8;
+}
+
+.input2:hover {
+  background-color: #9bf87e;
+  border-color: #cbd5e1;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.fa-eye {
+  position: absolute;
+  margin-left: 585px;
+  margin-top: 177px;
+  color: rgb(84, 83, 83);
+}
+
+.checkbox {
+  margin-left: 44px;
+  margin-top: 250px;
+  transform: scale(1.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rememberme {
+  font-size: 13px;
+  margin-left: 7.5px;
+  color: #94a3b8;
+  position: absolute;
+  margin-top: 250px;
+}
+
+.forget {
+  position: absolute;
+}
+
+.forgetpass {
+  position: absolute;
+  display: flex;
+  margin-left: 483px;
+  font-size: 14px;
+  color: rgb(0, 149, 255);
+  white-space: nowrap;
+  margin-top: -20px;
+  transition: 0.3s ease;
+}
+
+.forgetpass:hover {
+  color: rgb(169, 169, 239);
+}
+
+.sign {
+  position: absolute;
+  margin-top: 300px;
+  background-color: rgb(102, 249, 44);
+  border-radius: 7px;
+  margin-left: -16px;
+  height: 55px;
+  width: 580px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid rgb(206, 204, 204);
+  color: white;
+  white-space: nowrap;
+  line-height: normal;
+}
+
+.sign:hover {
+  background-color: #f0efef;
+  color: rgb(77, 255, 0);
+}
+
+.tomato {
+  position: absolute;
+}
+
+.tomatoimg {
+  width: 300px;
+  height: 300px;
+  margin-left: -1500px;
+  margin-top: 350px;
+  animation: spin 40s infinite;
+  position: absolute;
+  position: fixed;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+  from {
+    transform: rotate(0deg);
+  }
+}
+
+.tomatoimg1 {
+  width: 300px;
+  height: 300px;
+  margin-right: -1570px;
+  margin-top: 10px;
+  animation: spin 40s infinite;
+  position: absolute;
+  position: fixed;
+}

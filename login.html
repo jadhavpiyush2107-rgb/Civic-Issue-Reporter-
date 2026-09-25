@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.jgoogleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Login</title>
+    <link rel="icon" href="images/piyushfinal.png" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <section href="#" class="firstsection">
+      <header>
+        <p class="paralogin">Login</p>
+        <nav class="navbar">
+          <a href="index.html" target="_blank">Home</a>
+          <a href="order.html" target="_blank">Register</a>
+        </nav>
+      </header>
+    </section>
+
+    <section>
+      <div class="login-container">
+        <div class="loginbox">
+          <span class="pleaselogin">Sign In to Report Complaints</span>
+          <div class="orangesticker"></div>
+          <span class="span1">WELCOME </span>
+          <h1 class="heading">SHIRPURKAR!</h1>
+
+          <input
+            type="email"
+            id="email"
+            class="input1"
+            placeholder="Email Address"
+            required
+          />
+
+          <input
+            type="password"
+            id="password"
+            class="input2"
+            placeholder="Password"
+            required
+          />
+          <span onclick="togglePassword()">
+            <i id="eye-icon" class="far fa-eye"></i>
+          </span>
+
+          <input class="checkbox" type="checkbox" id="remember-me-checkbox" />
+          <label for="remember-me-checkbox" class="rememberme"
+            >Remembar Me</label
+          >
+          <div class="forget">
+            <a class="forgetpass" href="#">Forget Password</a>
+          </div>
+          <button class="sign">Sign In</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="login.js"></script>
+  </body>
+</html>
